@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lassi Valley</title>
+    
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffb800;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .koshalam{
+         text-decoration: none;
+         color:white;
+            
+        }
+        
+        .molo{
+            width:50px;
+            object-fit:contain;
+            border-radius:999px;
+             box-shadow:0 4px 8px rgba(0, 0, 0, 0.5);
+            
+}
+      .molobig{
+
+          
+          border-radius:99999px;
+          box-shadow:0 4px 8px rgba(0, 0, 0, 0.3);
+          max-width:80%;
+          margin-top:10px;
+
+      }
+        .num{
+            font-size:20px;
+            color:blue;
+        }
+      
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        nav ul li a:hover {
+    color: #ff4500;
+}
+
+        main {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 0 5px 10px 5px;
+            background-image: linear-gradient(to right, #ffb800, #ff8c00);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Products Section */
+        .products {
+            text-align: center;
+        }
+
+        .products h2, {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ff8c00;
+        }
+
+        .product-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr; /* Default to one column for mobile */
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            margin: 0.5rem 0;
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .product-card a, button {
+            text-decoration: none;
+            background-color: #ffb800;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .product-card a:hover {
+            background-color: #ff8c00;
+        }
+         
+         
+        .product-card button:hover {
+            background-color: red;
+        }
+        /* About Us Section */
+        
+        }
+
+        /* Footer */
+        .footer {
+            background: #ffb800;
+            text-align: center;
+        
+    
+        }
+        
+        
+        .fun {
+    background-color: #ffb800;
+    padding: 40px 10px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    
+}
+       
+        .footerlink :hover{
+            color:#ffb008;
+            text-decoration: none;
+        }
+        
+        .icon{
+            max-width:15px;
+        }
+        
+        .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Default hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%;
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  input{
+      width:100%;
+      align-self:center;
+      background-color:#ffb800;
+      border:none;
+      border-radius:99999px;
+      padding:5px 0 5px 10px;
+      
+  }
+  input:focus{
+      border:2px solid #ffb800;
+      background-color:white;
+  }
+  
+   #myPopup button:hover{
+       background-color:white;
+       border:2px solid #ffb800;
+       color:black;
+   }
+        /* Media Query for larger screens (e.g., tablets and desktops) */
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns */
+            }
+        }
+        @media (min-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr); /* Four columns */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <img class="molo" src="logo.jpg" alt="logo" />
+            <div class="logo">Lassi Valley </div>
+           
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+               <li> <a href="koshalamprogram.html" target="_blank" class="koshalam">
+                   © koshalam
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+                 <section class="hero">
+                     <img class="molobig" src="logo.jpg" alt="logo" />
+ 
+            <h1>Welcome to Lassi Valley!</h1>
+             <p>
+    | ¤ |  Explore our Lassi Valley Webpage  with G. I. C.  Barwala Vikasanagar D. Dun from Uttrakhand | ¤ |
+ </p>
+            <p>Experience the rich and creamy taste of Uttrakhand tradition.</p>
+                   
+        </section>
+
+        <section class="products">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                
+                         <div class="product-card">
+             <img src="buransh.jpg" alt="Buransh Lassi">
+             <h3>Buransh Lassi</h3>
+             <p>Taste the uttrakhand tradition / Price: ₹89</p>
+             <a href="buranshlassi.html" target="_blank">Learn More</a>
+             <button onclick="document.getElementById('myPopup').style.display='flex'">Order </button>
+         </div>
+
+                <div class="product-card">
+                    <img src="chocolate.jpg" alt="Chocolate Lassi">
+                    <h3>Chocolate Lassi</h3>
+                    <p>Rich and delicious . Price: ₹79</p>
+                    <a href="lassi.html" target="_blank">Learn More</a>
+                    <button onclick="document.getElementById('myPopup').style.display='flex'">Order </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="pan.jpg" alt="Pan Lassi">
+                    <h3>Pan Lassi</h3>
+                    <p>A unique and refreshing blend. Price: ₹89</p>
+                    <a href="panlassi.html" target="_blank">Learn More</a>
+                    <button onclick="document.getElementById('myPopup').style.display='flex'">Order </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="mango.jpg" alt="Mango Lassi">
+                    <h3>Mango Lassi</h3>
+                    <p>Sweet, tangy, and delightful. Price: ₹79</p>
+                    <a href="mangolassi.html" target="_blank">Learn More</a>
+                    <button onclick="document.getElementById('myPopup').style.display='flex'">Order </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="strawberry .jpg" alt="Strawberry Lassi">
+                    <h3>Strawberry Lassi</h3>
+                    <p>Fruity and fresh. Price: ₹69</p>
+                    <a href="strawberrylassi.html" target="_blank">Learn More</a>
+                    <button onclick="document.getElementById('myPopup').style.display='flex'">Order </button>
+                </div>
+
+
+                <div class="product-card">
+                    <img src="shugr.jpg" alt="Sugar Free Lassi">
+                    <h3>Sugar-Free Lassi</h3>
+                    <p>Healthy and delicious. Price: ₹59</p>
+                    <a href="shugrfree.html" target="_blank">Learn More</a>
+                    <button onclick="document.getElementById('myPopup').style.display='flex'">Order </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="ghee.jpg" alt="Pure Ghee">
+                    <h3>Pure Ghee</h3>
+                    <p>Rich, aromatic, and pure. Price: ₹800/kg</p>
+                    <a href="ghee.html" target="_blank">Learn More</a>
+                    <button onclick="document.getElementById('myPopup').style.display='flex'">Order </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="paneer.jpg" alt="Fresh Paneer">
+                    <h3>Fresh Paneer</h3>
+                    <p>Soft and creamy. Price: ₹450/kg</p>
+                    <a href="paneer.html" target="_blank">Learn More</a>
+                    <button onclick="document.getElementById('myPopup').style.display='flex'">Order </button>
+                </div>
+
+            </div>
+        </section>
+
+     
+    </main>
+
+    <footer class="footer">
+    <div class="fun">
+           <p>&copy; 2025 Lassi Valley. All rights reserved.</p>
+    <h2>supporters</h2>
+  <p>
+          ®  Udhyam Foundation©
+        </p>
+        <p>
+        ® Kaushalam team ©
+        </p>
+        <p>
+           ® GIC Barwala Vikasanagar school's teachers and also our classmate©
+        </p>
+    
+    <h2>
+        contact
+    </h2>
+    <p>
+        <p class ="num">Contact Us = +91 76688 70658</p>
+        <img class="icon" src="https://codeyogi.io/instagram.png" alt="instagram">
+        <a class ="footerlink" href="https://www.instagram.com/lassi_valley_?igsh=MTd1czJzMnJnM3dzeg==">@Lassi_Valley
+        </a>
+    </p>
+    </div>
+    </footer>
+    
+ 
+ <div id="myPopup" class="popup-overlay">
+     <div class="popup-content">
+         <span class="close-btn" onclick="document.getElementById('myPopup').style.display='none'">&times;</span>
+         <h2>Fill the form for order</h2>
+         <form onsubmit="document.getElementById('thankPopup').style.display='flex'" action="https://formspree.io/f/xpwjkryq" method="POST">
+             <label for="customer_name">Your Name:</label><br>
+<input type="text" id="customer_name" name="Customer Name" placeholder="Enter Your name" required><br><br>
+
+    <label for="product_name">Product Name:</label><br>
+    <input type="text" id="product_name" name="Product Name" placeholder="Example: Buransh lassi" required><br><br>
+    
+    <label for="quantity">Quantity :</label><br>
+    <input type="" id="quantity" name="Quantity" placeholder="For glass of lassi type '1 glass' or for Paneer or Ghee type '1 kg' " required><br><br>
+    
+    <label for="customer_number">Your Mobile Number:</label><br>
+    <input type="tel" id="customer_number" name="Customer Number" placeholder="Example +91 1234567890" required><br><br>
+    
+    
+    <label for="message"> Message :</label><br>
+    <input type="text" id="message" name="Massage" placeholder="Type anything you want: not required " ><br><br>
+    
+    <input type="text" name="_gotcha" style="display:none">
+    
+    <button onclick="" type="submit">Place Order</button>
+</form>
+     </div>
+ </div>
+ 
+  <div id="thankPopup" class="popup-overlay">
+     <div class="popup-content">
+         <span class="close-btn" onclick="document.getElementById('thankPopup').style.display='none'">&times;</span>
+         <h2>Thank You For Order</h2>
+        
+         <p>
+             we will contact you soon as possible for more details 
+         </p>
+
+     </div>
+ </div>
+
+</body>
+</html>
